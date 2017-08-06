@@ -1,167 +1,167 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "$id": "spell.json",
-  "type": "object",
-  "definitions": {
-    "dice": {
-      "type": "object",
-      "properties": {
-        "roll": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string",
-          "enum": [
-            "Healing",
-            "Acid",
-            "Bludgeoning",
-            "Cold",
-            "Fire",
-            "Force",
-            "Lightning",
-            "Necrotic",
-            "Piercing",
-            "Poison",
-            "Psychic",
-            "Radiant",
-            "Slashing",
-            "Thunder"
-          ]
-        },
-        "add_modifier": {
-          "type": "boolean",
-          "description": "if true, add your spellcasting ability modifier to the roll"
-        },
-        "progression": {
-          "type": "string",
-          "description": "If this spell is a cantrip, the spell's damage/healing will increase by this much at levels 5, 11, and 17. If this spell is not a cantrip, the spell's damage/healing will increase by this much each level above the spells level. For example, if you cast a level 2 spell at 3rd or above, it will increase by this amount for each slot level above 2nd."
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://raw.githubusercontent.com/cattegy/5e-json-schema/master/spell.json",
+    "type": "object",
+    "definitions": {
+        "dice": {
+            "type": "object",
+            "properties": {
+                "roll": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "Healing",
+                        "Acid",
+                        "Bludgeoning",
+                        "Cold",
+                        "Fire",
+                        "Force",
+                        "Lightning",
+                        "Necrotic",
+                        "Piercing",
+                        "Poison",
+                        "Psychic",
+                        "Radiant",
+                        "Slashing",
+                        "Thunder"
+                    ]
+                },
+                "add_modifier": {
+                    "type": "boolean",
+                    "description": "if true, add your spellcasting ability modifier to the roll"
+                },
+                "progression": {
+                    "type": "string",
+                    "description": "If this spell is a cantrip, the spell's damage/healing will increase by this much at levels 5, 11, and 17. If this spell is not a cantrip, the spell's damage/healing will increase by this much each level above the spells level. For example, if you cast a level 2 spell at 3rd or above, it will increase by this amount for each slot level above 2nd."
+                }
+            },
+            "required": [
+                "dice",
+                "type"
+            ]
         }
-      },
-      "required": [
-        "dice",
-        "type"
-      ]
-    }
-  },
-  "properties": {
-    "name": {
-      "type": "string"
     },
-    "cast_time": {
-      "type": "string",
-      "default": "1 action"
-    },
-    "components": {
-      "type": "object",
-      "properties": {
-        "types": {
-          "type": "string",
-          "enum": [
-            "VSM",
-            "VS",
-            "SM",
-            "VM",
-            "V",
-            "S",
-            "M"
-          ]
+    "properties": {
+        "name": {
+            "type": "string"
         },
-        "materials": {
-          "type": "string"
-        }
-      }
-    },
-    "concentration": {
-      "type": "boolean"
-    },
-    "attack_distance": {
-      "type": "string",
-      "enum": [
-        "Melee",
-        "Ranged"
-      ]
-    },
-    "dice": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/dice"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "secondary": {
-              "$ref": "#/definitions/dice"
-            }
-          }
-        }
-      ]
-    },
-    "description": {
-      "type": "string",
-      "description": "An abbreviated/condensed form of the spell description"
-    },
-    "duration": {
-      "type": "string"
-    },
-    "level": {
-      "type": "integer"
-    },
-    "range": {
-      "type": "string"
-    },
-    "ritual": {
-      "type": "boolean"
-    },
-    "save": {
-      "throw": {
-        "$ref": "definitions.json#/ability"
-      },
-      "success": {
-        "type": "string",
-        "description": "Description of what happens if the target succeeds on their saving throw"
-      }
-    },
-    "school": {
-      "$ref": "definitions.json#/magic_school"
-    },
-    "target": {
-      "type": "string"
-    }
-  },
-  "required": [
-    "name",
-    "cast_time",
-    "school",
-    "level"
-  ],
-  "verbose": {
-    "allOf": [
-      {
-        "$ref": "#"
-      },
-      {
-        "properties": {
-        	"$schema":{
-        		"type":"string"
-        	},
-          "classes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "description_full": {
+        "cast_time": {
             "type": "string",
-            "description": "An extended spell description"
-          },
-          "sources": {
-            "$ref": "definitions.json#/sources"
-          }
+            "default": "1 action"
         },
-        "required": [
-          "description_full"
+        "components": {
+            "type": "object",
+            "properties": {
+                "types": {
+                    "type": "string",
+                    "enum": [
+                        "VSM",
+                        "VS",
+                        "SM",
+                        "VM",
+                        "V",
+                        "S",
+                        "M"
+                    ]
+                },
+                "materials": {
+                    "type": "string"
+                }
+            }
+        },
+        "concentration": {
+            "type": "boolean"
+        },
+        "attack_distance": {
+            "type": "string",
+            "enum": [
+                "Melee",
+                "Ranged"
+            ]
+        },
+        "dice": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/dice"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "secondary": {
+                            "$ref": "#/definitions/dice"
+                        }
+                    }
+                }
+            ]
+        },
+        "description": {
+            "type": "string",
+            "description": "An abbreviated/condensed form of the spell description"
+        },
+        "duration": {
+            "type": "string"
+        },
+        "level": {
+            "type": "integer"
+        },
+        "range": {
+            "type": "string"
+        },
+        "ritual": {
+            "type": "boolean"
+        },
+        "save": {
+            "throw": {
+                "$ref": "definitions.json#/ability"
+            },
+            "success": {
+                "type": "string",
+                "description": "Description of what happens if the target succeeds on their saving throw"
+            }
+        },
+        "school": {
+            "$ref": "definitions.json#/magic_school"
+        },
+        "target": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name",
+        "cast_time",
+        "school",
+        "level"
+    ],
+    "verbose": {
+        "allOf": [
+            {
+                "$ref": "#"
+            },
+            {
+                "properties": {
+                    "$schema": {
+                        "type": "string"
+                    },
+                    "classes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "description_full": {
+                        "type": "string",
+                        "description": "An extended spell description"
+                    },
+                    "sources": {
+                        "$ref": "definitions.json#/sources"
+                    }
+                },
+                "required": [
+                    "description_full"
+                ]
+            }
         ]
-      }
-    ]
-  }
+    }
 }

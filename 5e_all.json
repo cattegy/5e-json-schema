@@ -1,99 +1,99 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "$id": "5e_all.json",
-  "type": "object",
-  "description": "5e data with only absolutely necessary properties. Information like full text descriptions and sources is omitted.",
-  "properties": {
-    "$schema": {
-      "type": "string"
-    },
-    "classes": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "class.json#"
-      }
-    },
-    "feats": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "feat.json#"
-      }
-    },
-    "items": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "item.json"
-      }
-    },
-    "monsters": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "monster.json"
-      }
-    },
-    "races": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "race.json"
-      }
-    },
-    "spells": {
-      "type": "object",
-      "additionalProperties": {
-        "$ref": "spell.json"
-      }
-    }
-  },
-  "additionalProperties": false,
-  "verbose": {
-    "description": "All 5e data with extended properties",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://raw.githubusercontent.com/cattegy/5e-json-schema/master/5e_all.json",
+    "type": "object",
+    "description": "5e data with only absolutely necessary properties. Information like full text descriptions and sources is omitted.",
     "properties": {
-      "$schema": {
-        "type": "string"
-      },
-      "characters": {
-        "type": "array",
-        "definition": "Pregenerated characters",
+        "$schema": {
+            "type": "string"
+        },
+        "classes": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "class.json#"
+            }
+        },
+        "feats": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "feat.json#"
+            }
+        },
         "items": {
-          "$ref": "character.json"
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "item.json"
+            }
+        },
+        "monsters": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "monster.json"
+            }
+        },
+        "races": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "race.json"
+            }
+        },
+        "spells": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "spell.json"
+            }
         }
-      },
-      "classes": {
-        "type": "array",
-        "items": {
-          "$ref": "class.json/#/verbose"
+    },
+    "additionalProperties": false,
+    "verbose": {
+        "description": "All 5e data with extended properties",
+        "properties": {
+            "$schema": {
+                "type": "string"
+            },
+            "characters": {
+                "type": "array",
+                "definition": "Pregenerated characters",
+                "items": {
+                    "$ref": "character.json"
+                }
+            },
+            "classes": {
+                "type": "array",
+                "items": {
+                    "$ref": "class.json/#/verbose"
+                }
+            },
+            "feats": {
+                "type": "array",
+                "items": {
+                    "$ref": "feat.json/#/verbose"
+                }
+            },
+            "items": {
+                "type": "array",
+                "items": {
+                    "$ref": "item.json/#/verbose"
+                }
+            },
+            "monsters": {
+                "type": "array",
+                "items": {
+                    "$ref": "monster.json/#/verbose"
+                }
+            },
+            "races": {
+                "type": "array",
+                "items": {
+                    "$ref": "race.json/#/verbose"
+                }
+            },
+            "spells": {
+                "type": "array",
+                "items": {
+                    "$ref": "spell.json/#/verbose"
+                }
+            }
         }
-      },
-      "feats": {
-        "type": "array",
-        "items": {
-          "$ref": "feat.json/#/verbose"
-        }
-      },
-      "items": {
-        "type": "array",
-        "items": {
-          "$ref": "item.json/#/verbose"
-        }
-      },
-      "monsters": {
-        "type": "array",
-        "items": {
-          "$ref": "monster.json/#/verbose"
-        }
-      },
-      "races": {
-        "type": "array",
-        "items": {
-          "$ref": "race.json/#/verbose"
-        }
-      },
-      "spells": {
-        "type": "array",
-        "items": {
-          "$ref": "spell.json/#/verbose"
-        }
-      }
     }
-  }
 }

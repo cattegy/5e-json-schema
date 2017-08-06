@@ -1,48 +1,45 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "$id": "class.json",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string"
-    },
-    
-    
-   
-    "traits": {
-      "type": "array",
-      "items": {
-        "$ref": "definitions.json#/trait"
-      }
-    },
-    "primary_ability": {
-      "$ref": "definitions.json#/ability"
-    },
-    "hit_die": {
-      "$ref": "definitions.json#/die"
-    }
-  },
-  "required": [
-    "name",
-    "hit_die",
-    "primary_ability"
-  ],
-  "verbose": {
-  	"type": "object",
-    "allOf": [
-      {
-        "$ref": "#"
-      },
-      {
-        "properties": {
-          "$schema": {
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://raw.githubusercontent.com/cattegy/5e-json-schema/master/class.json",
+    "type": "object",
+    "properties": {
+        "name": {
             "type": "string"
-          },
-          "sources": {
-            "$ref": "definitions.json#/sources"
-          }
+        },
+        "hit_die": {
+            "$ref": "definitions.json#/die"
+        },
+        "primary_ability": {
+            "$ref": "definitions.json#/ability"
+        },
+        "traits": {
+            "type": "array",
+            "items": {
+                "$ref": "definitions.json#/trait"
+            }
         }
-      }
-    ]
-  }
+    },
+    "required": [
+        "name",
+        "hit_die",
+        "primary_ability"
+    ],
+    "verbose": {
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "#"
+            },
+            {
+                "properties": {
+                    "$schema": {
+                        "type": "string"
+                    },
+                    "sources": {
+                        "$ref": "definitions.json#/sources"
+                    }
+                }
+            }
+        ]
+    }
 }
