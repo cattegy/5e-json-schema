@@ -1,0 +1,45 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$id":"5e_all.json",
+	"type": "object",
+	"description": "5e data with only absolutely necessary properties. Information like full text descriptions and sources is omitted.",
+	"properties": {
+		"classes": {
+			"type": "array",
+			"items": {
+				"$ref": "class.json"
+			}
+		},
+		"feats": {
+			"type": "array",
+			"items": {
+				"$ref": "feat.json#"
+			}
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"$ref": "item.json"
+			}
+		},
+		"monsters":{
+			"type": "array",
+			"items": {
+				"$ref": "monster.json"
+			}
+		},
+		"races": {
+			"type": "array",
+			"items": {
+				"$ref": "race.json"
+			}
+		},
+		"spells": {
+			"type": "array",
+			"items": {
+				"$ref": "spell.json"
+			}
+		}
+	},
+	"additionalProperties": false
+}

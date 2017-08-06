@@ -1,0 +1,56 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$id": "spell.json",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"cast_time": {
+			"type": "string",
+			"default": "1 action"
+		},
+		"components": {
+			"type": "object",
+			"properties": {
+				"types": {
+					"type": "string",
+					"enum": [
+						"VSM",
+						"VS",
+						"SM",
+						"VM",
+						"V",
+						"S",
+						"M"
+					]
+				},
+				"materials": {
+					"type": "string"
+				}
+			}
+		},
+		"description": {
+			"type": "string",
+			"description": "An abbreviated/condensed form of the spell description"
+		},
+		"duration": {
+			"type": "string"
+		},
+		"level": {
+			"type": "integer"
+		},
+		"range": {
+			"type": "string"
+		},
+		"school": {
+			"$ref": "definitions.json#/magic_school"
+		}
+	},
+	"required": [
+		"name",
+		"cast_time",
+		"school",
+		"level"
+	]
+}

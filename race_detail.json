@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$id": "race_detail.json",
+	"type": "object",
+	"allOf": [
+		{
+			"$ref": "race.json"
+		},
+		{
+			"properties": {
+				"sources": {
+					"$ref": "definitions.json#/sources"
+				}
+			}
+		}
+	]
+}

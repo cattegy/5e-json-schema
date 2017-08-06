@@ -1,0 +1,171 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$id": "item.json",
+	"type": "object",
+	"oneOf": [
+		{
+			"$ref": "#/definitions/weapon"
+		},
+		{
+			"$ref": "#/definitions/armor"
+		},
+		{
+			"$ref": "#/definitions/gear"
+		},
+		{
+			"$ref": "#/definitions/pack"
+		}
+	],
+	"definitions": {
+		"armor": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"enum": [
+						"armor"
+					]
+				},
+				"name": {
+					"type": "string"
+				},
+				"category": {
+					"$ref": "definitions.json#/armor_category"
+				},
+				"cost": {
+					"$ref": "definitions.json#/cost"
+				},
+				"weight": {
+					"type": "integer"
+				},
+				"armor_class": {
+					"type": "integer"
+				},
+				"strength_required": {
+					"type": "integer"
+				},
+				"stealth_disadvantage": {
+					"type": "boolean"
+				}
+			},
+			"required": [
+				"type",
+				"name",
+				"category",
+				"cost",
+				"weight",
+				"armor_class"
+			]
+		},
+		"gear": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"enum": [
+						"gear"
+					]
+				},
+				"name": {
+					"type": "string"
+				},
+				"cost": {
+					"$ref": "definitions.json#/cost"
+				},
+				"weight": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"type",
+				"name",
+				"cost",
+				"weight"
+			]
+		},
+		"pack": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"enum": [
+						"pack"
+					]
+				},
+				"name": {
+					"type": "string"
+				},
+				"cost": {
+					"$ref": "definitions.json#/cost"
+				},
+				"items": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			},
+			"required": [
+				"type",
+				"name",
+				"cost"
+			]
+		},
+		"weapon": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"enum": [
+						"weapon"
+					]
+				},
+				"name": {
+					"type": "string"
+				},
+				"category": {
+					"$ref": "definitions.json#/weapon_category"
+				},
+				"cost": {
+					"$ref": "definitions.json#/cost"
+				},
+				"weight": {
+					"type": "integer"
+				},
+				"damage_die_count": {
+					"type": "integer"
+				},
+				"damage_die": {
+					"$ref": "definitions.json#/die"
+				},
+				"damage_type": {
+					"$ref": "definitions.json#/damage_type"
+				},
+				"properties": {
+					"type": "array",
+					"items": {
+						"$ref": "definitions.json#/weapon_property"
+					}
+				},
+				"range": {
+					"type": "object",
+					"properties": {
+						"normal": {
+							"type": "integer"
+						},
+						"long": {
+							"type": "integer"
+						}
+					}
+				}
+			},
+			"required": [
+				"type",
+				"name",
+				"category",
+				"cost",
+				"weight",
+				"damage_die_count",
+				"damage_die",
+				"damage_type",
+				"properties"
+			]
+		}
+	}
+}

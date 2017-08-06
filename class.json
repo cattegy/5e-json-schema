@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"$id": "class.json",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"hit_die": {
+			"$ref": "definitions.json#/die"
+		},
+		"primary_ability": {
+			"$ref": "definitions.json#/ability"
+		},
+		"traits": {
+			"type": "array",
+			"items": {
+				"$ref": "definitions.json#/trait"
+			}
+		}
+	},
+	"required": [
+		"name",
+		"hit_die",
+		"primary_ability"
+	]
+}
