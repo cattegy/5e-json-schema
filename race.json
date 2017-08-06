@@ -1,75 +1,92 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"$id": "race.json",
-	"type": "object",
-	"$ref": "#/race",
-	"required": [
-		"name",
-		"age",
-		"alignment",
-		"size",
-		"base_speed",
-		"languages"
-	],
-	"race": {
-		"type": "object",
-		"properties": {
-			"name": {
-				"type": "string"
-			},
-			"age": {
-				"type": "string"
-			},
-			"alignment": {
-				"type": "string"
-			},
-			"size": {
-				"type": "object",
-				"properties": {
-					"category": {
-						"$ref": "definitions.json#/size"
-					},
-					"description": {
-						"type": "string"
-					}
-				},
-				"additionalProperties": false,
-				"required": [
-					"category"
-				]
-			},
-			"speed": {
-				"type": "object",
-				"properties": {
-					"base_speed": {
-						"type": "integer"
-					},
-					"description": {
-						"type": "string"
-					}
-				}
-			},
-			"languages": {
-				"type": "array",
-				"items": {
-					"type": "string"
-				}
-			},
-			"sub_races": {
-				"type": "array",
-				"items": {
-					"$ref": "#/race"
-				}
-			},
-			"traits": {
-				"type": "array",
-				"items": {
-					"$ref": "definitions.json#/trait"
-				}
-			}
-		},
-		"required": [
-			"name"
-		]
-	}
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "race.json",
+  "type": "object",
+  "$ref": "#/race",
+  "required": [
+    "name",
+    "age",
+    "alignment",
+    "size",
+    "base_speed",
+    "languages"
+  ],
+  "race": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "age": {
+        "type": "string"
+      },
+      "alignment": {
+        "type": "string"
+      },
+      "size": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "$ref": "definitions.json#/size"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "category"
+        ]
+      },
+      "speed": {
+        "type": "object",
+        "properties": {
+          "base_speed": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "languages": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "sub_races": {
+        "type": "array",
+        "items": {
+          "$ref": "#/race"
+        }
+      },
+      "traits": {
+        "type": "array",
+        "items": {
+          "$ref": "definitions.json#/trait"
+        }
+      }
+    },
+    "required": [
+      "name"
+    ]
+  },
+  "verbose": {
+    "allOf": [
+      {
+        "$ref": "#"
+      },
+      {
+        "properties": {
+          "$schema": {
+            "type": "string"
+          },
+          "sources": {
+            "$ref": "definitions.json#/sources"
+          }
+        }
+      }
+    ]
+  }
 }
