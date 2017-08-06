@@ -1,0 +1,19 @@
+{
+  "name": "5e-json-schema",
+  "version": "1.0.0",
+  "description": "A JSON schema for storing D&amp;D 5th Edition data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cattegy/5e-json-schema.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cattegy/5e-json-schema/issues"
+  },
+  "homepage": "https://github.com/cattegy/5e-json-schema#readme"
+}
