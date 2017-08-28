@@ -4,7 +4,6 @@
     "type": "object",
     "definitions": {
         "dice": {
-            "type": "object",
             "properties": {
                 "roll": {
                     "type": "string"
